@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <div id="cartContainer">
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div id="cartSummary">
+            <h3>Total: $<span id="cartTotal">0.00</span></h3>
+            <button id="checkoutButton">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!--<script>
+        $(document).ready(function () {
+            displayCart();
+
+            // Function to display cart items
+            function displayCart() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartTableBody = $('#cartTable tbody');
+                let cartTotal = 0;
+
+                // Clear existing cart data
+                cartTableBody.empty();
+
+                // Display each product in the cart
+                cart.forEach((item, index) => {
+                    const subtotal = item.price * item.quantity;
+                    cartTotal += subtotal;
+
+                    const cartRow = `
+                        <tr>
+                            <td>${item.title}</td>
+                            <td><img src="data:image/jpeg;base64,${item.image}" alt="${item.title}" class="cart-image"></td>
+                            <td>$${item.price.toFixed(2)}</td>
+                            <td>
+                                <input type="number" min="1" value="${item.quantity}" class="cart-quantity" data-index="${index}">
+                            </td>
+                            <td>$${subtotal.toFixed(2)}</td>
+                            <td><button class="remove-item" data-index="${index}">Remove</button></td>
+                        </tr>
+                    `;
+                    cartTableBody.append(cartRow);
+                });
+
+                // Update total
+                $('#cartTotal').text(cartTotal.toFixed(2));
+
+                // Event listener for quantity change
+                $('.cart-quantity').on('change', function () {
+                    const index = $(this).data('index');
+                    const newQuantity = parseInt($(this).val());
+
+                    if (newQuantity > 0) {
+                        updateQuantity(index, newQuantity);
+                    }
+                });
+
+                // Event listener for removing item
+                $('.remove-item').on('click', function () {
+                    const index = $(this).data('index');
+                    removeItem(index);
+                });
+            }
+
+            // Function to update quantity in the cart
+            function updateQuantity(index, newQuantity) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart[index].quantity = newQuantity;
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCart();
+            }
+
+            // Function to remove an item from the cart
+            function removeItem(index) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.splice(index, 1);
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCart();
+
+            }
+
+            $('#checkoutButton').on('click', function () {
+            window.location.href = 'checkout.html'; // Navigate to the checkout page
+        });
+        });
+    </script>
+-->
+    <script src="Cart.js"></script> <!-- Include the custom JavaScript file -->
+</body>
+</html>

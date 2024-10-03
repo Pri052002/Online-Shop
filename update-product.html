@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="update-product.css">
+</head>
+<body>
+
+    <h1>Update Product</h1>
+
+    <!-- Form for updating the selected product -->
+    <div id="productDetails">
+        <label for="updateTitle">Title</label>
+        <input type="text" id="updateTitle" readonly>
+
+        <label for="updateDescription">Description</label>
+        <input type="text" id="updateDescription">
+
+        <label for="updateQuantity">Quantity</label>
+        <input type="number" id="updateQuantity">
+
+        <label for="updatePrice">Price</label>
+        <input type="number" id="updatePrice" step="0.01">
+
+        <label for="updateImage">Image URL</label>
+        <input type="text" id="updateImage">
+
+        <label for="isActive">Is Active</label>
+        <input type="checkbox" id="isActive">
+
+        <!-- New field for Credit Limit -->
+        <label for="creditLimit">Credit Limit</label>
+        <input type="number" id="creditLimit" step="0.01">
+
+        <button id="saveUpdateBtn">Save Changes</button>
+        <button id="cancelUpdateBtn">Cancel</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const inventoryURL = 'https://firestore.googleapis.com/v1/projects/online-shopping-658a7/databases/(default)/documents/Inventory';
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                alert('Invalid product ID.');
+                window.location.href = 'update.html';
+                return;
+            }
+
+            // Fetch the product details for the given product ID
+            fetchProductDetails(productId);
+
+            async function fetchProductDetails(productId) {
+                try {
+                    const response = await fetch(`${inventoryURL}/${productId}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const product = await response.json();
+                    populateForm(product);
+                } catch (error) {
+                    console.error('Error fetching product details:', error);
+                }
+            }
+
+            // Populate the form with product details
+            function populateForm(product) {
+                $('#updateTitle').val(product.fields.Title.stringValue);
+                $('#updateDescription').val(product.fields.Description.stringValue);
+                $('#updateQuantity').val(product.fields.Quantity.integerValue);
+                $('#updatePrice').val(product.fields.Price.doubleValue);
+                $('#updateImage').val(product.fields.Image.stringValue);
+                $('#isActive').prop('checked', product.fields.IsActive.booleanValue);
+
+                // Populate the credit limit
+                if (product.fields.CreditLimit) {
+                    $('#creditLimit').val(product.fields.CreditLimit.doubleValue);
+                } else {
+                    $('#creditLimit').val(0); // Default value if no CreditLimit field exists
+                }
+            }
+
+            // Save updated product data
+            $('#saveUpdateBtn').on('click', async function () {
+                const updatedProduct = {
+                    fields: {
+                        Title: { stringValue: $('#updateTitle').val() },
+                        Description: { stringValue: $('#updateDescription').val() },
+                        Quantity: { integerValue: parseInt($('#updateQuantity').val()) },
+                        Price: { doubleValue: parseFloat($('#updatePrice').val()) },
+                        Image: { stringValue: $('#updateImage').val() },
+                        IsActive: { booleanValue: $('#isActive').prop('checked') },
+                        CreditLimit: { doubleValue: parseFloat($('#creditLimit').val()) } // Include the CreditLimit field
+                    }
+                };
+
+                try {
+                    const response = await fetch(`${inventoryURL}/${productId}?updateMask.fieldPaths=Title&updateMask.fieldPaths=Description&updateMask.fieldPaths=Quantity&updateMask.fieldPaths=Price&updateMask.fieldPaths=Image&updateMask.fieldPaths=IsActive&updateMask.fieldPaths=CreditLimit`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(updatedProduct)
+                    });
+
+                    if (response.ok) {
+                        alert('Product updated successfully.');
+                        window.location.href = 'update.html';
+                    } else {
+                        alert('Error updating product.');
+                    }
+                } catch (error) {
+                    console.error('Error updating product:', error);
+                }
+            });
+
+            // Cancel update and go back to product list
+            $('#cancelUpdateBtn').on('click', function () {
+                window.location.href = 'update.html';
+            });
+        });
+    </script>
+
+</body>
+</html>

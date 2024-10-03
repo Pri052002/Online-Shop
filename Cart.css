@@ -1,0 +1,99 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Dark gray color for the heading */
+}
+
+/* Cart Container */
+#cart {
+    background-color: #fff; /* White background for the cart */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    border: 1px solid #ddd; /* Light gray border for items */
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Item Details */
+.item-details {
+    flex-grow: 1; /* Allow details to take up remaining space */
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    background-color: #007bff; /* Blue color for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for effect */
+}
+
+.quantity-controls button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Total Price Container */
+#totalPriceContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Confirm Button */
+#confirmButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745; /* Green color for confirm button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for effect */
+}
+
+#confirmButton:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Empty Cart Message */
+.empty-cart {
+    text-align: center;
+    color: #ff0000; /* Red color for empty cart message */
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #cart {
+        width: 90%; /* Make cart responsive on smaller screens */
+    }
+}

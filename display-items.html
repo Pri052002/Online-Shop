@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="product.js" defer></script>
+    <link rel="stylesheet" href="display-items.css">
+</head>
+<body>
+    <main>
+        <h1>Product List</h1>
+        <section id="displayProducts">
+            <h2>Display Products</h2>
+            <div id="responseMessage"></div>
+
+            <!-- Dropdown for category selection -->
+            <label for="categorySelect">Select Category:</label>
+            <select id="categorySelect">
+                <option value="all">All Categories</option>
+            </select>
+
+            <!-- Product Table -->
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="productList"></tbody>
+            </table>
+        </section>
+
+        <!-- Pagination Controls -->
+        <div id="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="currentPage">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </main>
+</body>
+</html>

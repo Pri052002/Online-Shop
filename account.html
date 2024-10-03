@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Online Shop</h2>
+
+        <!-- Login Form -->
+        <div id="login-form">
+            <h3><center>Login</center></h3>
+            <form>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <a href="#" id="forgot-password-link">Forgot Password?</a>
+                <p><center>New User?</center> <a href="#" id="show-signup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup-form-container" class="hidden">
+            <h3>Sign Up</h3>
+            <form id="signup-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="text" id="mobile" placeholder="Mobile" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="account.js"></script>
+</body>
+</html>

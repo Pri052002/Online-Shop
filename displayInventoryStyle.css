@@ -1,0 +1,222 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#inventoryList {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next line if needed 
+    justify-content: space-between; /* Even spacing between items 
+    gap: 20px; /* Space between product containers 
+    margin-bottom: 40px;
+}
+
+.item {
+    flex: 1 1 calc(25% - 20px); /* Make each item take up 25% of the container width, minus margins 
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change 
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.item button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item button:hover {
+    background-color: #0056b3;
+}
+
+/* Hover effect for the item containers 
+.item:hover {
+    background-color: #f0f8ff; /* Light blue background on hover 
+    border-color: #007BFF; /* Change border color on hover 
+}
+
+/* Cart section styling 
+#cart {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+@media (max-width: 1024px) {
+    .item {
+        flex: 1 1 calc(33.333% - 20px); /* 3 items per row on medium screens 
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row on small screens 
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 1 1 100%; /* 1 item per row on very small screens 
+    }
+}
+
+.out-of-stock  {
+    color: red;
+    font-weight: bold; /* Optional: makes the text bold 
+}*/
+/* Container for the inventory list */
+#inventoryList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Item card style */
+.item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Item hover effect */
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Item image */
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Item title */
+.item h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Item description */
+.item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Price styling */
+.item p:last-of-type {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Add to cart button */
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Add to cart button hover */
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Out of stock message */
+.out-of-stock {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Limited stock header */
+#inventoryList h2 {
+    width: 100%;
+    color: red;
+    font-size: 20px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* Horizontal separator */
+#inventoryList hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Cart container */
+#cart {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Cart item display */
+#cart div {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Cart title */
+#cart h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}

@@ -1,0 +1,69 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A modern font */
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Gradient background */
+    color: #333; /* Text color */
+}
+
+/* Product list container */
+#productList {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Centers the product items */
+}
+
+/* Individual product item styling */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Reduced margin for a tighter layout */
+    padding: 20px;
+    border: 1px solid #ddd; /* Subtle border for product items */
+    background-color: #ffffff; /* White background for better contrast */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition for hover effect */
+}
+
+/* Hover effect for product items */
+.product-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Product image styling */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Update button styling */
+.updateProductBtn {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px; /* Increased padding for better touch targets */
+    border-radius: 5px; /* Rounded corners for buttons */
+    font-weight: bold; /* Bold text for buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+}
+
+/* Update button hover effect */
+.updateProductBtn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly scale up on hover for emphasis */
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 600px) {
+    .product-item {
+        width: 90%; /* Allow more space on small screens */
+        margin: 10px auto; /* Center the product items */
+    }
+}

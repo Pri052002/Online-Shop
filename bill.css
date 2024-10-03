@@ -1,0 +1,101 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Styling the main title */
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Order Summary container */
+#orderSummary {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Section titles */
+h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling for customer and item details */
+p, div {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+/* Strong text styling */
+strong {
+    color: #4CAF50;
+}
+
+/* Styling for individual items */
+#orderSummary .cart-item {
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+/* Separator between items */
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* Total Price styling */
+#orderSummary h2:last-of-type {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    text-align: right;
+}
+
+/* Total Price container */
+#orderSummary .total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 600px) {
+    #orderSummary {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p, div {
+        font-size: 0.9rem;
+    }
+
+    #orderSummary .total-price {
+        font-size: 1.2rem;
+    }
+}

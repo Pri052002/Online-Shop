@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    <!-- Order Summary Section -->
+    <div id="checkoutContainer">
+        <h2>Order Summary</h2>
+        <table id="orderSummaryTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Order items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div id="checkoutSummary">
+            <h3>Total: $<span id="orderTotal">0.00</span></h3>
+        </div>
+    </div>
+
+    <!-- Billing and Payment Section -->
+    <div id="billingSection">
+        <h2>Billing Information</h2>
+        <form id="billingForm">
+            <!-- User Name -->
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <!-- Mobile Number -->
+            <div>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" pattern="^\d{10}$" required>
+                <small>Must be 10 digits</small>
+            </div>
+
+            <!-- Delivery Address -->
+            <div>
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+
+            <!-- Payment Mode -->
+            <div>
+                <h3>Payment Mode</h3>
+                <label>
+                    <input type="radio" name="paymentMethod" value="Credit/Debit Card" required> Credit/Debit Card
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="Cash on Delivery" required> Cash on Delivery
+                </label>
+            </div>
+
+            <!-- Place Order Button -->
+            <button type="submit" id="placeOrderButton">Place Order</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="checkout.js"></script> <!-- Link to the separate JS file -->
+</body>
+</html>

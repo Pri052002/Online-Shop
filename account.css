@@ -1,0 +1,118 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark Background */
+    color: #E0E0E0; /* Light Gray Text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1E1E1E; /* Darker Container Background */
+    padding: 20px;
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out; /* Animation on container */
+}
+
+h2 {
+    text-align: center;
+    color: #FFBB33; /* Bright Yellow for Heading */
+}
+
+/* Input Styles */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444; /* Darker Border */
+    border-radius: 6px;
+    background-color: #333; /* Input Background */
+    color: #E0E0E0; /* Input Text Color */
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+}
+
+input:focus {
+    border: 1px solid #FFBB33; /* Yellow on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 187, 51, 0.5); /* Shadow on focus */
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #BB86FC; /* Light Purple */
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s; /* Added transform transition */
+}
+
+button:hover {
+    background-color: #3700B3; /* Darker Purple on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Link Styles */
+a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    color: #FFBB33; /* Bright Yellow for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFBB00; /* Darker Yellow on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Slide from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}

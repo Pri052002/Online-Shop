@@ -1,0 +1,80 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9; /* Soft background color for contrast */
+}
+
+/* Product Details Container */
+#productDetails {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f0f0f0;
+    max-width: 400px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+/* Input field styling */
+input[type="text"], 
+input[type="number"], 
+input[type="checkbox"] {
+    margin-top: 5px;
+    padding: 10px; /* Increased padding for better touch targets */
+    width: 100%;
+    border: 1px solid #ccc; /* Subtle border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    transition: border-color 0.3s; /* Transition effect for focus */
+}
+
+/* Input field focus effect */
+input[type="text"]:focus, 
+input[type="number"]:focus {
+    border-color: #4cacaf; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    font-weight: bold; /* Bold text for buttons */
+    transition: background-color 0.3s; /* Transition effect for hover */
+}
+
+/* Save button styling */
+#saveUpdateBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Cancel button styling */
+#cancelUpdateBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Button hover effects */
+button:hover {
+    opacity: 0.9; /* Slightly darken on hover */
+}
+
+/* Specific hover effect for save button */
+#saveUpdateBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Specific hover effect for cancel button */
+#cancelUpdateBtn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
